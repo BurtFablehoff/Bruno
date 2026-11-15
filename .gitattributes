@@ -1,0 +1,13 @@
+* text=auto
+*.cs text eol=lf
+*.ps1 text eol=lf
+*.json text eol=lf
+*.manifest text eol=lf
+*.md text eol=lf
+*.iss text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+app/SharedReleaseUpdater.cs text eol=crlf
+tools/SharedWrite-AnimatedGif.ps1 text eol=crlf
+*.png binary
+*.gif binary

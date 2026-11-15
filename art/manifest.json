@@ -1,0 +1,555 @@
+{
+  "schema": 1,
+  "identity": "BrunoCompanionV1",
+  "frames": {
+    "sit": {
+      "file": "frames/sit.png",
+      "sha256": "dd4863eed08c769982a99909a4f1a890d4424caf45dba053a71b711cf052528d",
+      "scale": 1.0,
+      "supportX": 554.0,
+      "supportY": 1265.0,
+      "draft": false,
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        45,
+        993,
+        1382
+      ],
+      "precomposited": false,
+      "pawBaselineY": 1382,
+      "floorContact": "seated butt"
+    },
+    "sit-lay-1": {
+      "file": "frames/sit-lay-1.png",
+      "sha256": "6a5f407bb9ff050995ad43bde7d16c8519024b27afccd98a6465d6812eb0ab58",
+      "scale": 1.3088235294117647,
+      "supportX": 555.0,
+      "supportY": 1009.1587888007865,
+      "draft": false,
+      "width": 1374,
+      "height": 1145,
+      "bounds": [
+        178,
+        82,
+        1194,
+        1097
+      ],
+      "precomposited": false,
+      "pawBaselineY": 1097,
+      "floorContact": "seat-to-elbows transition"
+    },
+    "sit-lay-2": {
+      "file": "frames/sit-lay-2.png",
+      "sha256": "4ef630dff69af0e71fc7cc89d85b0b8c096454e430391a4d81daaa6faaf06f1b",
+      "scale": 1.0743243243243241,
+      "supportX": 484.0,
+      "supportY": 1177.875983367362,
+      "draft": false,
+      "width": 1158,
+      "height": 1358,
+      "bounds": [
+        100,
+        97,
+        1091,
+        1283
+      ],
+      "precomposited": false,
+      "pawBaselineY": 1283,
+      "floorContact": "seat-to-elbows transition"
+    },
+    "sit-lay-3": {
+      "file": "frames/sit-lay-3.png",
+      "sha256": "a606d0ae3ece130674072803025f76d7a900ea9d7c47e0c83975f6005febb83a",
+      "scale": 1.1648351648351647,
+      "supportX": 600.0,
+      "supportY": 891.7883034812305,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        187,
+        61,
+        1371,
+        987
+      ],
+      "precomposited": false,
+      "pawBaselineY": 987,
+      "floorContact": "seat-to-elbows transition"
+    },
+    "lay": {
+      "file": "frames/lay.png",
+      "sha256": "47f03d877cc6246aa6f3ee614d44547d05e73f9a2c0a1258e35beb1ceebe1ef8",
+      "scale": 1.077966101764706,
+      "supportX": 610.0,
+      "supportY": 905.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        239,
+        20,
+        1394,
+        1008
+      ],
+      "precomposited": false,
+      "pawBaselineY": 1006,
+      "floorContact": "chest/elbows"
+    },
+    "lay-sleep-1": {
+      "file": "frames/lay-sleep-1.png",
+      "sha256": "27e85ee6fc1e39db158f13fe7911aee4ec0d625fa7b5199332a4d5fe7c67a8f8",
+      "scale": 1.0709745763235294,
+      "supportX": 606.083086043829,
+      "supportY": 910.6961424331026,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        234,
+        101,
+        1396,
+        1009
+      ],
+      "precomposited": false,
+      "pawBaselineY": 1009,
+      "floorContact": "chest/elbows"
+    },
+    "lay-sleep-2": {
+      "file": "frames/lay-sleep-2.png",
+      "sha256": "f1425c0f729fc69c7317299b95a1d580a57f5dd1c960d959525303673ac621f7",
+      "scale": 1.063983050882353,
+      "supportX": 612.1146953210822,
+      "supportY": 912.4277180404432,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        204,
+        151,
+        1409,
+        1008
+      ],
+      "precomposited": false,
+      "pawBaselineY": 1008,
+      "floorContact": "chest/elbows"
+    },
+    "lay-sleep-3": {
+      "file": "frames/lay-sleep-3.png",
+      "sha256": "1f964ecb65896a1e65c7196f45e23b974441c25ffe768950aa7cb35e3618e16a",
+      "scale": 1.0569915254411764,
+      "supportX": 618.0938063445069,
+      "supportY": 910.1954299457457,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        160,
+        259,
+        1423,
+        1003
+      ],
+      "precomposited": false,
+      "pawBaselineY": 1003,
+      "floorContact": "chest/elbows"
+    },
+    "sleep": {
+      "file": "frames/sleep.png",
+      "sha256": "e470a4905fb59f2878e4713d1ab530476eb8510f8d3cc9355a246af73cdf246b",
+      "scale": 1.0499999999999998,
+      "supportX": 617.019370420168,
+      "supportY": 900.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        134,
+        267,
+        1428,
+        990
+      ],
+      "precomposited": false,
+      "pawBaselineY": 990,
+      "floorContact": "chest/elbows"
+    },
+    "sit-blink-half": {
+      "file": "frames/sit-blink-half.png",
+      "sha256": "aff55fdcb59ba47956a738df973ea0a7900381cfbc005c860ab122fedd5cdae9",
+      "scale": 1.0,
+      "supportX": 554.0,
+      "supportY": 1265.0,
+      "draft": false,
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        45,
+        993,
+        1382
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1382,
+      "floorContact": "seated butt"
+    },
+    "sit-blink-closed": {
+      "file": "frames/sit-blink-closed.png",
+      "sha256": "a6dc16af5816f42048963ff44b4aa0c5d48fb22a242eb8efda47e3b6cd8ca79a",
+      "scale": 1.0,
+      "supportX": 554.0,
+      "supportY": 1265.0,
+      "draft": false,
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        45,
+        993,
+        1382
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1382,
+      "floorContact": "seated butt"
+    },
+    "sit-tilt-mid": {
+      "file": "frames/sit-tilt-mid.png",
+      "sha256": "ae055f422663f55d863779fde5df6a4eb0c33dad0e57d2f0d9cfac0e4dd5df29",
+      "scale": 1.0,
+      "supportX": 554.0,
+      "supportY": 1265.0,
+      "draft": false,
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        42,
+        993,
+        1382
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1382,
+      "floorContact": "seated butt"
+    },
+    "sit-tilt-peak": {
+      "file": "frames/sit-tilt-peak.png",
+      "sha256": "90102443f0ad0c0a1fe107299aadaf277a72dd280c6effc8533dfe6d2f74ce07",
+      "scale": 1.0,
+      "supportX": 554.0,
+      "supportY": 1265.0,
+      "draft": false,
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        22,
+        993,
+        1382
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1382,
+      "floorContact": "seated butt"
+    },
+    "sit-tongue-retracted": {
+      "file": "frames/sit-tongue-retracted.png",
+      "sha256": "68e521d0454dbf5dfd349535bae1d2fc282839e3f432bef17563432ec3eaa3f9",
+      "scale": 1.0,
+      "supportX": 554.0,
+      "supportY": 1265.0,
+      "draft": false,
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        45,
+        993,
+        1382
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1382,
+      "floorContact": "seated butt"
+    },
+    "sit-tongue-peak": {
+      "file": "frames/sit-tongue-peak.png",
+      "sha256": "39b59324fe4b1abdac38d4e02fd5025c81ca742a5846f9d7c72a6a20e8c4f984",
+      "scale": 1.0,
+      "supportX": 554.0,
+      "supportY": 1265.0,
+      "draft": false,
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        45,
+        993,
+        1382
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1382,
+      "floorContact": "seated butt"
+    },
+    "lay-blink-half": {
+      "file": "frames/lay-blink-half.png",
+      "sha256": "08b7598f2522c168f3549b29246e8e6379e35935a4b59b5418211572dccce697",
+      "scale": 1.077966101764706,
+      "supportX": 610.0,
+      "supportY": 905.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        239,
+        20,
+        1394,
+        1008
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1006,
+      "floorContact": "chest/elbows"
+    },
+    "lay-blink-closed": {
+      "file": "frames/lay-blink-closed.png",
+      "sha256": "035d002d0d39911ceee34aae31c374ed5f549c259d279c62393a38c85699d454",
+      "scale": 1.077966101764706,
+      "supportX": 610.0,
+      "supportY": 905.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        239,
+        20,
+        1394,
+        1008
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1006,
+      "floorContact": "chest/elbows"
+    },
+    "lay-tilt-mid": {
+      "file": "frames/lay-tilt-mid.png",
+      "sha256": "e17ba5a062cd0eb6e251e618a37e0506cf042e3fe79d397022882d7975e58eff",
+      "scale": 1.077966101764706,
+      "supportX": 610.0,
+      "supportY": 905.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        239,
+        7,
+        1394,
+        1008
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1006,
+      "floorContact": "chest/elbows"
+    },
+    "lay-tilt-peak": {
+      "file": "frames/lay-tilt-peak.png",
+      "sha256": "582a4f0425f621ee15bf884710c81e1e974b5670afd975ed030ab26173298fad",
+      "scale": 1.077966101764706,
+      "supportX": 610.0,
+      "supportY": 905.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        239,
+        5,
+        1394,
+        1008
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1006,
+      "floorContact": "chest/elbows"
+    },
+    "lay-tongue-retracted": {
+      "file": "frames/lay-tongue-retracted.png",
+      "sha256": "9b29c8b677ed74756f019dd5171cccfeaee4a6dd35a8630c0ead64b8d188eb3d",
+      "scale": 1.077966101764706,
+      "supportX": 610.0,
+      "supportY": 905.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        239,
+        20,
+        1394,
+        1008
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1006,
+      "floorContact": "chest/elbows"
+    },
+    "lay-tongue-peak": {
+      "file": "frames/lay-tongue-peak.png",
+      "sha256": "a30d1a67e3839fdfa315f535830fef4af6e9a2480251aa0ca354859f9becdc19",
+      "scale": 1.077966101764706,
+      "supportX": 610.0,
+      "supportY": 905.0,
+      "draft": false,
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        239,
+        20,
+        1394,
+        1008
+      ],
+      "precomposited": true,
+      "pawBaselineY": 1006,
+      "floorContact": "chest/elbows"
+    }
+  },
+  "clips": {
+    "sit-blink": {
+      "frames": [
+        "sit-blink-half",
+        "sit-blink-closed",
+        "sit-blink-half"
+      ],
+      "seconds": [
+        0.06,
+        0.08,
+        0.06
+      ],
+      "pose": "sit",
+      "draft": false
+    },
+    "sit-tilt": {
+      "frames": [
+        "sit-tilt-mid",
+        "sit-tilt-peak",
+        "sit-tilt-mid"
+      ],
+      "seconds": [
+        0.16,
+        2.5,
+        0.16
+      ],
+      "pose": "sit",
+      "draft": false
+    },
+    "sit-tongue": {
+      "frames": [
+        "sit-tongue-retracted",
+        "sit",
+        "sit-tongue-peak",
+        "sit",
+        "sit-tongue-retracted"
+      ],
+      "seconds": [
+        0.14,
+        0.12,
+        0.8,
+        0.12,
+        0.14
+      ],
+      "pose": "sit",
+      "draft": false
+    },
+    "lay-blink": {
+      "frames": [
+        "lay-blink-half",
+        "lay-blink-closed",
+        "lay-blink-half"
+      ],
+      "seconds": [
+        0.06,
+        0.08,
+        0.06
+      ],
+      "pose": "lay",
+      "draft": false
+    },
+    "lay-tilt": {
+      "frames": [
+        "lay-tilt-mid",
+        "lay-tilt-peak",
+        "lay-tilt-mid"
+      ],
+      "seconds": [
+        0.16,
+        2.5,
+        0.16
+      ],
+      "pose": "lay",
+      "draft": false
+    },
+    "lay-tongue": {
+      "frames": [
+        "lay-tongue-retracted",
+        "lay",
+        "lay-tongue-peak",
+        "lay",
+        "lay-tongue-retracted"
+      ],
+      "seconds": [
+        0.14,
+        0.12,
+        0.8,
+        0.12,
+        0.14
+      ],
+      "pose": "lay",
+      "draft": false
+    },
+    "sit-to-lay": {
+      "frames": [
+        "sit-lay-1",
+        "sit-lay-2",
+        "sit-lay-3"
+      ],
+      "seconds": [
+        0.12,
+        0.14,
+        0.12
+      ],
+      "pose": "sit",
+      "draft": false
+    },
+    "lay-to-sit": {
+      "frames": [
+        "sit-lay-3",
+        "sit-lay-2",
+        "sit-lay-1"
+      ],
+      "seconds": [
+        0.12,
+        0.14,
+        0.12
+      ],
+      "pose": "lay",
+      "draft": false
+    },
+    "lay-to-sleep": {
+      "frames": [
+        "lay-sleep-1",
+        "lay-sleep-2",
+        "lay-sleep-3"
+      ],
+      "seconds": [
+        0.16,
+        0.16,
+        0.16
+      ],
+      "pose": "lay",
+      "draft": false
+    },
+    "sleep-to-lay": {
+      "frames": [
+        "lay-sleep-3",
+        "lay-sleep-2",
+        "lay-sleep-1"
+      ],
+      "seconds": [
+        0.16,
+        0.16,
+        0.16
+      ],
+      "pose": "sleep",
+      "draft": false
+    }
+  }
+}

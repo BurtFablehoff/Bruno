@@ -1,0 +1,200 @@
+{
+  "date": "2026-11-14",
+  "ownerResponse": "pass",
+  "scope": "Exact blink, head tilt and tongue peek/retract composites in both awake poses, their fixed-body masking and shown timing in detail/body GIFs. Does not approve new posture transitions or runtime desktop behavior.",
+  "immutable": true,
+  "files": [
+    {
+      "file": "tools/ActionReview.cs",
+      "sha256": "cd7861f0e2f86c5bb14b95b7ff31272e9e9bd88a4599ee397832df409967e2e3"
+    },
+    {
+      "file": "tools/Build-ActionReview.ps1",
+      "sha256": "d86a63f50caf4f3c78e96f7cae1b8efc41468cb2f3745f9f89f0aa30949fb562"
+    },
+    {
+      "file": "tools/SharedWrite-AnimatedGif.ps1",
+      "sha256": "e2d5fe12e930751742ffb7aae061ca69c656a7bb6135f1ff46fa58c47f80ff4d"
+    },
+    {
+      "file": "planning/action-review-v1.json",
+      "sha256": "47726613c46adc1d7932e6a58df4b6d6e2fac22c1f0a8823dd4c1dc4234e6ef0"
+    },
+    {
+      "file": "planning/action-sources-v1.json",
+      "sha256": "e0da64ea18ac8461ef5a092e1bb5dcf4b5882e6adc276a3d71738800893617d1"
+    },
+    {
+      "file": "test-exes/Bruno-ActionReview-v1.exe",
+      "sha256": "c0d59b3ab31ecbebaae3d1eeaf021c9fd5de18a7dc17e9a195849a3f834cf382"
+    },
+    {
+      "file": "build/actions-review-v1/body.gif",
+      "sha256": "43f3b94383b0f4abc3f7a16ca46d42174cf7a0017b401669bfd199806349173f"
+    },
+    {
+      "file": "build/actions-review-v1/detail.gif",
+      "sha256": "86c35f63c594589db7597674cb4d71206d7ea682d6a9ab370dbb011f8fa548dd"
+    },
+    {
+      "file": "build/actions-review-v1/checks.json",
+      "sha256": "19aa173fb897fec61ac13942ff23121cac0db173a76524ad5419e10924981d40"
+    },
+    {
+      "file": "build/actions-review-v1/delays.txt",
+      "sha256": "d6ff9477b3539f7c44488f694091e3fe84848feb9549550ce2393bbe96cadc64"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/lay-blink-closed.png",
+      "sha256": "035d002d0d39911ceee34aae31c374ed5f549c259d279c62393a38c85699d454"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/lay-blink-half.png",
+      "sha256": "08b7598f2522c168f3549b29246e8e6379e35935a4b59b5418211572dccce697"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/lay-tilt-mid.png",
+      "sha256": "e17ba5a062cd0eb6e251e618a37e0506cf042e3fe79d397022882d7975e58eff"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/lay-tilt-peak.png",
+      "sha256": "582a4f0425f621ee15bf884710c81e1e974b5670afd975ed030ab26173298fad"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/lay-tongue-peak.png",
+      "sha256": "a30d1a67e3839fdfa315f535830fef4af6e9a2480251aa0ca354859f9becdc19"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/lay-tongue-retracted.png",
+      "sha256": "9b29c8b677ed74756f019dd5171cccfeaee4a6dd35a8630c0ead64b8d188eb3d"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/lay.png",
+      "sha256": "413b9f32d56d2f3bd4546131a0e41129fd8d49cc5ac5660cceecf7f04805f244"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/sit-blink-closed.png",
+      "sha256": "a6dc16af5816f42048963ff44b4aa0c5d48fb22a242eb8efda47e3b6cd8ca79a"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/sit-blink-half.png",
+      "sha256": "aff55fdcb59ba47956a738df973ea0a7900381cfbc005c860ab122fedd5cdae9"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/sit-tilt-mid.png",
+      "sha256": "ae055f422663f55d863779fde5df6a4eb0c33dad0e57d2f0d9cfac0e4dd5df29"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/sit-tilt-peak.png",
+      "sha256": "90102443f0ad0c0a1fe107299aadaf277a72dd280c6effc8533dfe6d2f74ce07"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/sit-tongue-peak.png",
+      "sha256": "39b59324fe4b1abdac38d4e02fd5025c81ca742a5846f9d7c72a6a20e8c4f984"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/sit-tongue-retracted.png",
+      "sha256": "68e521d0454dbf5dfd349535bae1d2fc282839e3f432bef17563432ec3eaa3f9"
+    },
+    {
+      "file": "build/actions-review-v1/native-frames/sit.png",
+      "sha256": "6150847a2d88fa8dc6359c7726fcd5618e8d4bc90589af90854f175ef4bf332b"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-blink-half/source.png",
+      "sha256": "7038f35443bba92ca19a51e5a6d508eebe6595ce53814c779ab70fe8a4f00d15"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-blink-half/prompt.txt",
+      "sha256": "94b385f29b554b840bac6a64d9563a0631279288522f032d069df3235d80d78b"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-blink-closed/source.png",
+      "sha256": "436d978829e8e9bd41a9e7dfccf29cb73a18427782875a5580baa029a3705fb1"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-blink-closed/prompt.txt",
+      "sha256": "8ad6cb4d152f307a7067852fb996669cf83c8c6a1650458d1392b4bd9f46dbfe"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-blink-half/source.png",
+      "sha256": "44215299fcc3a3273e247c7d757e30a92aa6c7a45057bac078a858172bbf9937"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-blink-half/prompt.txt",
+      "sha256": "c4038c26b1dfae1377768a32d69305d1520cc232fe93881eca29c86f23ac356b"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-blink-closed/source.png",
+      "sha256": "00732bb0932f68ad209eba5611d13186bd7b2fcd9d0018b7576abbed37c961d8"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-blink-closed/prompt.txt",
+      "sha256": "c41ad15a9c1c7608a2a7415971de668195885d7239285ab0dafdc674068c652c"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tilt-mid/source.png",
+      "sha256": "8511c41dda518a15b14254d77d00e0cbcc2de7bbea3ee6c18ecbb7162944f6b5"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tilt-mid/prompt.txt",
+      "sha256": "bb1cd7a9804d3604d6511ae28f17da015bbe9407be0ca08be8e310fe6bce8d43"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tilt-peak/source.png",
+      "sha256": "8c50db2b1b1d6aab0d7a2d01bbc2781de0645842f8ffb400ddb5310324d9ce42"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tilt-peak/prompt.txt",
+      "sha256": "5aaa903812dc9c9a6d9c4b0e6d0213c6b94468d9cb9dacf2d0f9a671022d6a21"
+    },
+    {
+      "file": "draft-assets/actions-v2/lay-tilt-mid/source.png",
+      "sha256": "8d870e64343d6ba247f863856eae3400566f80d8dcc6f46a4d8446a2922f53c6"
+    },
+    {
+      "file": "draft-assets/actions-v2/lay-tilt-mid/prompt.txt",
+      "sha256": "de89f19e6a77df6558e9ce68c97e6989c94b161d5103ad758d45bf1b14e6619e"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-tilt-peak/source.png",
+      "sha256": "9ea860c7be1df1ae8c8c595c4f78057bf5143fec449c118b8813753e46a1d24e"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-tilt-peak/prompt.txt",
+      "sha256": "24b6ec53124b05ea34b1cc096bde9737f558d00b403182ab205c91e78e53088d"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tongue-retracted/source.png",
+      "sha256": "8e61f5e79c4596fd5d1eedf6c8b95d1026043cc5cd58726a6c4108f014b6bfb8"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tongue-retracted/prompt.txt",
+      "sha256": "fa861f1d12deae7491f55876827272fce645f9ec088872facbe7c992cec98e68"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tongue-peak/source.png",
+      "sha256": "0f4d2c47c8a4f74939aea1b05ca891423fe235fd039ba8dac9c73f4173328e32"
+    },
+    {
+      "file": "draft-assets/actions-v1/sit-tongue-peak/prompt.txt",
+      "sha256": "e9cb6befe67e430b376297a302d60c193f6f158b202b8b4b0896cf31098dba36"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-tongue-retracted/source.png",
+      "sha256": "74db89eda28dbff3cb6595642ca7e3d75fde1c59a5cb0e197bdf408b1498fe05"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-tongue-retracted/prompt.txt",
+      "sha256": "7b906c81deda6bf03412303543b4cc530808e67bce9a6c4687bb3830f1a2f51a"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-tongue-peak/source.png",
+      "sha256": "d0608744c9290b6caa03876f7193df161a230ff36253179eba4048cbcd517f31"
+    },
+    {
+      "file": "draft-assets/actions-v1/lay-tongue-peak/prompt.txt",
+      "sha256": "d820ed43a55e92eb3568deaf76a3161c2923d87c34a1f3a89202fc8a16328772"
+    }
+  ]
+}

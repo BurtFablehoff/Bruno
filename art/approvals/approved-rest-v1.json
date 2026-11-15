@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-14",
+  "ownerResponse": "pass",
+  "scope": "Lying-awake and head-down sleep images as shown with approved sit in the common physical scale/floor review. No blinks, expressions, transitions, runtime behavior or timings approved.",
+  "immutable": true,
+  "files": [
+    {
+      "file": "sit.png",
+      "source": "draft-assets\\approved-sit-v1\\sit.png",
+      "sha256": "dd4863eed08c769982a99909a4f1a890d4424caf45dba053a71b711cf052528d"
+    },
+    {
+      "file": "lay.png",
+      "source": "draft-assets\\lay-v1\\lay.png",
+      "sha256": "47f03d877cc6246aa6f3ee614d44547d05e73f9a2c0a1258e35beb1ceebe1ef8"
+    },
+    {
+      "file": "sleep.png",
+      "source": "draft-assets\\sleep-v1\\sleep.png",
+      "sha256": "e470a4905fb59f2878e4713d1ab530476eb8510f8d3cc9355a246af73cdf246b"
+    },
+    {
+      "file": "rest-review-v1.json",
+      "source": "planning\\rest-review-v1.json",
+      "sha256": "b824092115534bff85a41ac9ed99d5507c53e6be3ef8cd8f11197b71b1a635a2"
+    },
+    {
+      "file": "rest-prompts-v1.json",
+      "source": "planning\\rest-prompts-v1.json",
+      "sha256": "7f1dad2138911a7643fd002fd273afc0cd7b93d9a97e0db8c001df5aa11e94f4"
+    },
+    {
+      "file": "Build-PoseReview.ps1",
+      "source": "tools\\Build-PoseReview.ps1",
+      "sha256": "57c4e479edd20cfbf12e440ad8e2d95c3808f842cf61fba90d27c530987f0ae7"
+    },
+    {
+      "file": "review-light.png",
+      "source": "build\\rest-review-v1-light.png",
+      "sha256": "a2177246fab9c8437d49cf61817421ee1ae305b58275541acbc044708103eb6e"
+    },
+    {
+      "file": "review-dark.png",
+      "source": "build\\rest-review-v1-dark.png",
+      "sha256": "7599e65f2f11fac545ecce159c8401fb93511fb31c3e004a40b37b5063e92413"
+    }
+  ]
+}

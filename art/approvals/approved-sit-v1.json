@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-14",
+  "ownerResponse": "pass",
+  "scope": "Exact seated image likeness and rendering style shown in this chat. Does not approve later poses, animation, runtime scale, placement or timing.",
+  "source": "../sit-v1/sit.png",
+  "file": "sit.png",
+  "sha256": "dd4863eed08c769982a99909a4f1a890d4424caf45dba053a71b711cf052528d",
+  "immutable": true,
+  "limits": "Preserve exact bytes. Low-alpha edge fringe was recorded in the original review; any runtime cleanup must be a separate derivative."
+}

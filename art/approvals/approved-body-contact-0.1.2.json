@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-14",
+  "ownerResponse": "pass",
+  "scope": "0.1.2 floor/body contact: seated butt, lying chest/elbows, and front paw overhang. No separate assertion of installer execution, startup registration or mixed-DPI/monitor testing.",
+  "files": [
+    {
+      "file": "art/manifest.json",
+      "sha256": "6addcc70d68dfe7b82b876b8154584997c7164b3bdfe09e7b02b7c6cfadc3377"
+    },
+    {
+      "file": "planning/body-contact-0.1.2.json",
+      "sha256": "11deac51930f64e5cd88eaa5286d56d0fb83928908df6f602e58136ae73c5d26"
+    },
+    {
+      "file": "planning/current-build.json",
+      "sha256": "5321d8c9ac92ef560c533b9db7e0c7ed331ca66b5ba93f735bbc9ab202f49340"
+    },
+    {
+      "file": "app/Placement.cs",
+      "sha256": "d6f67524a8219e617cc11bc1905d8da0f1f551d85939cdeef90d8f808c19c97f"
+    },
+    {
+      "file": "app/Checks.cs",
+      "sha256": "b704d219eaf63299c5ba059c536ac532edb65133906f7a956bac045f66ce0473"
+    },
+    {
+      "file": "app/DesktopChecks.cs",
+      "sha256": "2319676a293b4e693ad4c7bb0661500288eedf69448648920021eee23e0f2d31"
+    },
+    {
+      "file": "build/body-contact-0.1.2.png",
+      "sha256": "aa51c90dd6de591b9210c78be7bd1dd95bf71f6f1e40eed5569ccdb32152e28f"
+    }
+  ],
+  "binaries": {
+    "production": {
+      "file": "test-exes/Bruno-0.1.2.exe",
+      "bytes": 49890816,
+      "sha256": "ee043e9649b573be74eda78155da2ee7eb13cd1e92bf3c3efbc65dc6d38088f6"
+    },
+    "development": {
+      "file": "test-exes/Bruno-Dev-0.1.2.exe",
+      "bytes": 49890816,
+      "sha256": "a778bd0e87fd738558caec5e0d955881a771b90a36fb9b9fa9d3fddf1efde912"
+    },
+    "installer": {
+      "file": "build/release/Bruno-Setup-0.1.2.exe",
+      "bytes": 47783268,
+      "sha256": "f9c976ba92667e11da49405dcd4bd98a308ccb78b712de4c964eef830501f76a"
+    }
+  },
+  "immutable": true
+}

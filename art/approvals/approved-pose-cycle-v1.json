@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-14",
+  "ownerResponse": "pass",
+  "scope": "Exact selected posture drawings, source mapping, uniform registration and forward/reverse timings in the full cycle shown. Does not approve desktop input, monitor behavior or new drawings.",
+  "immutable": true,
+  "files": [
+    {
+      "file": "planning/transition-sources-v1.json",
+      "sha256": "bde2463be07bf95bfd8d7acb9d28074e913de58789a2a0fea1a7a99c2bcbfd5e"
+    },
+    {
+      "file": "planning/transition-review-v1.json",
+      "sha256": "dc0651d03bd9359851af17e401153fe07f8e30c56928c7b78a58bf849c88d29d"
+    },
+    {
+      "file": "tools/TransitionReview.cs",
+      "sha256": "d31a3d2655a38946375b8ea88652022f065c85d01ab138cdbaaabd3fed7d42e4"
+    },
+    {
+      "file": "tools/Build-TransitionReview.ps1",
+      "sha256": "8119bec20e659ecc91491f0edc794a0b1a2d8aa48f7dbaf9913dbb1374070695"
+    },
+    {
+      "file": "tools/SharedWrite-AnimatedGif.ps1",
+      "sha256": "e2d5fe12e930751742ffb7aae061ca69c656a7bb6135f1ff46fa58c47f80ff4d"
+    },
+    {
+      "file": "test-exes/Bruno-TransitionReview-v1.exe",
+      "sha256": "3d91d770fb1e61a7f222bf8ef88a998b1f7dea0feb774dc42cf6011e014741bf"
+    },
+    {
+      "file": "build/transitions-review-v1/light.gif",
+      "sha256": "0348ee6765e59636e3baf02b99e988b580af8421eeac4c13cd9d72e36ed5999f"
+    },
+    {
+      "file": "build/transitions-review-v1/dark.gif",
+      "sha256": "3ed3bff6356eda03369de9898739b5a274ce5a7d87f8ce00486bfe017cc0412f"
+    },
+    {
+      "file": "build/transitions-review-v1/keyposes.png",
+      "sha256": "8a2afda7fe581d14ac56415467d97a96c98d348f1796d69b962f0ca87aaacd1c"
+    },
+    {
+      "file": "build/transitions-review-v1/checks.json",
+      "sha256": "c665e3bc3ff8b9820ad997b88c1f4e5b4841930abac3cba6a02ae2f097d49437"
+    },
+    {
+      "file": "draft-assets/approved-rest-v1/sit.png",
+      "sha256": "dd4863eed08c769982a99909a4f1a890d4424caf45dba053a71b711cf052528d"
+    },
+    {
+      "file": "draft-assets/transitions-v2/sit-lay-early/source.png",
+      "sha256": "6a5f407bb9ff050995ad43bde7d16c8519024b27afccd98a6465d6812eb0ab58"
+    },
+    {
+      "file": "draft-assets/transitions-v2/sit-lay-early/prompt.txt",
+      "sha256": "fd9a05445e1d72d3199659a98b1d1264cc4a9b962591358cdc4ee2533b2423b8"
+    },
+    {
+      "file": "draft-assets/transitions-v1/sit-lay-1/source.png",
+      "sha256": "4ef630dff69af0e71fc7cc89d85b0b8c096454e430391a4d81daaa6faaf06f1b"
+    },
+    {
+      "file": "draft-assets/transitions-v1/sit-lay-1/prompt.txt",
+      "sha256": "1735ef06319821bb900aea8968f3a985c2ab3a7a4569f0c2c7370832d8443e64"
+    },
+    {
+      "file": "draft-assets/transitions-v1/sit-lay-3/source.png",
+      "sha256": "a606d0ae3ece130674072803025f76d7a900ea9d7c47e0c83975f6005febb83a"
+    },
+    {
+      "file": "draft-assets/transitions-v1/sit-lay-3/prompt.txt",
+      "sha256": "f35b15a9b0acc3f6192eb54d7bd6be4b1929e8db60e1f294158461c7584fe968"
+    },
+    {
+      "file": "draft-assets/approved-rest-v1/lay.png",
+      "sha256": "47f03d877cc6246aa6f3ee614d44547d05e73f9a2c0a1258e35beb1ceebe1ef8"
+    },
+    {
+      "file": "draft-assets/transitions-v1/lay-sleep-1/source.png",
+      "sha256": "27e85ee6fc1e39db158f13fe7911aee4ec0d625fa7b5199332a4d5fe7c67a8f8"
+    },
+    {
+      "file": "draft-assets/transitions-v1/lay-sleep-1/prompt.txt",
+      "sha256": "ef68fdd3bd02bd0fb0aac8b9b13a53fd6df387fadaa37fdf3432afa95159a6e7"
+    },
+    {
+      "file": "draft-assets/transitions-v1/lay-sleep-2/source.png",
+      "sha256": "f1425c0f729fc69c7317299b95a1d580a57f5dd1c960d959525303673ac621f7"
+    },
+    {
+      "file": "draft-assets/transitions-v1/lay-sleep-2/prompt.txt",
+      "sha256": "8b92e39eeb950ddbc9885c9ac3c7226e9849a19dc57da5a61768a593707fc599"
+    },
+    {
+      "file": "draft-assets/transitions-v1/lay-sleep-3/source.png",
+      "sha256": "1f964ecb65896a1e65c7196f45e23b974441c25ffe768950aa7cb35e3618e16a"
+    },
+    {
+      "file": "draft-assets/transitions-v1/lay-sleep-3/prompt.txt",
+      "sha256": "011b953ca00dc1746693de244bb377b514e79b0565109f4be178078d10e65bf9"
+    },
+    {
+      "file": "draft-assets/approved-rest-v1/sleep.png",
+      "sha256": "e470a4905fb59f2878e4713d1ab530476eb8510f8d3cc9355a246af73cdf246b"
+    }
+  ]
+}

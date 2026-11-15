@@ -1,0 +1,9 @@
+/local-data/
+/*.zip
+/draft-assets/
+/build/
+/test-exes/
+/planning/
+__pycache__/
+*.pyc
+*.log
