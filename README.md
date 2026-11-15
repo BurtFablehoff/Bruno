@@ -13,6 +13,8 @@ to Small. Existing saved physical sizes are retained; choose Size > Small to shr
 
 ## Run
 
+**[Detailed Windows installation guide, including Defender and SmartScreen warnings](INSTALL.md)**
+
 Download [**Bruno-Setup-0.1.2.exe**](https://github.com/BurtFablehoff/Bruno/releases/download/v0.1.2/Bruno-Setup-0.1.2.exe)
 for per-user installation, shortcuts and an uninstaller. An optional desktop
 shortcut is unchecked by default. No administrator rights are required.
