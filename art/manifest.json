@@ -400,6 +400,96 @@
       "precomposited": true,
       "pawBaselineY": 1006,
       "floorContact": "chest/elbows"
+    },
+    "sit-lay-a": {
+      "file": "frames/sit-lay-a.png",
+      "sha256": "fbc017b8564049aab269344c340a4942cb7902617f0239300a98525db8f4d91c",
+      "width": 1191,
+      "height": 1321,
+      "bounds": [
+        102,
+        70,
+        1106,
+        1276
+      ],
+      "scale": 1.13,
+      "supportX": 507.5,
+      "supportY": 1140,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "sit-lay-b": {
+      "file": "frames/sit-lay-b.png",
+      "sha256": "1b07cf3fda38912ee3ac5271e23f6ce99f18229194fb081b2d242c8ea2f12f64",
+      "width": 1089,
+      "height": 1444,
+      "bounds": [
+        85,
+        337,
+        1044,
+        1355
+      ],
+      "scale": 1.124,
+      "supportX": 472,
+      "supportY": 1230,
+      "floorContact": "seat-to-elbows transition",
+      "draft": false,
+      "precomposited": false
+    },
+    "lay-sleep-a": {
+      "file": "frames/lay-sleep-a.png",
+      "sha256": "8e5c22156cd431266b9871917aafca06dba8bd52ad9d0b44891225bfce8d7249",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        237,
+        44,
+        1398,
+        1008
+      ],
+      "scale": 1.0744703390441177,
+      "supportX": 608.0415430219145,
+      "supportY": 907.85,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "lay-sleep-b": {
+      "file": "frames/lay-sleep-b.png",
+      "sha256": "a735dc41d858302f7a5518d444f8f7f48e81006bb654cf28dba8ba5c4605c2e4",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        230,
+        110,
+        1401,
+        1008
+      ],
+      "scale": 1.0674788136029412,
+      "supportX": 609.0988906824556,
+      "supportY": 911.56,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "sit-lay-c": {
+      "file": "frames/sit-lay-c.png",
+      "sha256": "1790bc54811f36ca7f4ed3c8151f15a62ddad9d11bdacdad30827dbcc9bd8d9c",
+      "width": 1104,
+      "height": 1424,
+      "bounds": [
+        53,
+        122,
+        1092,
+        1333
+      ],
+      "scale": 1.096551724137931,
+      "supportX": 475,
+      "supportY": 1205,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
     }
   },
   "clips": {
@@ -497,13 +587,17 @@
     },
     "sit-to-lay": {
       "frames": [
-        "sit-lay-1",
+        "sit-lay-a",
+        "sit-lay-c",
         "sit-lay-2",
+        "sit-lay-b",
         "sit-lay-3"
       ],
       "seconds": [
-        0.12,
-        0.14,
+        0.06,
+        0.06,
+        0.07,
+        0.07,
         0.12
       ],
       "pose": "sit",
@@ -512,26 +606,34 @@
     "lay-to-sit": {
       "frames": [
         "sit-lay-3",
+        "sit-lay-b",
         "sit-lay-2",
-        "sit-lay-1"
+        "sit-lay-c",
+        "sit-lay-a"
       ],
       "seconds": [
         0.12,
-        0.14,
-        0.12
+        0.07,
+        0.07,
+        0.06,
+        0.06
       ],
       "pose": "lay",
       "draft": false
     },
     "lay-to-sleep": {
       "frames": [
+        "lay-sleep-a",
         "lay-sleep-1",
+        "lay-sleep-b",
         "lay-sleep-2",
         "lay-sleep-3"
       ],
       "seconds": [
-        0.16,
-        0.16,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
         0.16
       ],
       "pose": "lay",
@@ -541,12 +643,16 @@
       "frames": [
         "lay-sleep-3",
         "lay-sleep-2",
-        "lay-sleep-1"
+        "lay-sleep-b",
+        "lay-sleep-1",
+        "lay-sleep-a"
       ],
       "seconds": [
         0.16,
-        0.16,
-        0.16
+        0.08,
+        0.08,
+        0.08,
+        0.08
       ],
       "pose": "sleep",
       "draft": false

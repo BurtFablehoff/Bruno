@@ -1,4 +1,10 @@
-# Bruno 0.1.2
+# Bruno 0.1.3
+
+## Smoother movement in 0.1.3
+
+- More frames make sitting, lying down and falling asleep smoother.
+- Fixed the crouch that made lying down look out of order.
+- His size, speed and resting position on the taskbar stay the same.
 
 Bruno is a little pug for your Windows desktop. He sits, lies down, sleeps,
 tilts his head and peeks out his tongue.
@@ -7,15 +13,15 @@ tilts his head and peeks out his tongue.
 
 For Windows 10 or 11.
 
-1. [Download the Bruno installer](https://github.com/BurtFablehoff/Bruno/releases/download/v0.1.2/Bruno-Setup-0.1.2.exe).
+1. [Download the Bruno installer](https://github.com/BurtFablehoff/Bruno/releases/download/v0.1.3/Bruno-Setup-0.1.3.exe).
 2. If your browser says the file isn't commonly downloaded, click **Keep**, then **Keep anyway** when it asks again.
-3. Open **Bruno-Setup-0.1.2.exe** from your Downloads folder.
+3. Open **Bruno-Setup-0.1.3.exe** from your Downloads folder.
 4. If Windows shows **Windows protected your PC**, click **More info**, then **Run anyway**.
 5. Follow the setup steps, click **Install**, then **Finish**. Bruno will appear on your desktop!
 
 If an older Bruno is running, click him and choose **Close** before installing.
 
-## What's new
+## Other features
 
 - A smaller **Small** size, plus Normal, Large and Extra Large.
 - His butt rests on the taskbar when sitting, and his chest/elbows rest on it when lying down.
@@ -30,4 +36,4 @@ If an older Bruno is running, click him and choose **Close** before installing.
 
 Bruno will get sleepy and change poses on his own.
 
-![Bruno sitting, lying down and sleeping](https://raw.githubusercontent.com/BurtFablehoff/Bruno/main/docs/images/bruno-taskbar.png)
+![Bruno sitting, lying down and sleeping](https://raw.githubusercontent.com/BurtFablehoff/Bruno/v0.1.3/docs/images/bruno-motion.gif)

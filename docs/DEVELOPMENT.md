@@ -22,8 +22,8 @@ Installer packaging requires an existing external Inno Setup compiler:
 The packager checks product/version identity and rejects developer builds. It
 does not install or launch the package. No tool is downloaded automatically.
 
-The checks cover all 21 embedded frames, approved action/posture timing,
-840 placements across monitor geometries, 96 simulated hours, menu/state/input
+The checks cover all 26 embedded frames, approved action/posture timing,
+1040 placements across monitor geometries, 96 simulated hours, menu/state/input
 gates, alpha hit testing, hidden native uploads and identity/startup isolation.
 They show no visible companion/tray, write no owner startup/settings and use no
 network. Real dragging, menu feel and mixed-DPI changes need owner desktop review.

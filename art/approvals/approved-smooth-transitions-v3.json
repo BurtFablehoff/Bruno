@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-18",
+  "ownerResponse": "pass",
+  "scope": "Exact corrected v3 full posture cycle shown in the comparison: five active intermediate frames per route, sit/lie crouch replacement, reverse routes, new sources and their registration/timing. Existing actions and body contact retained. No separate installer execution/startup/mixed-DPI pass inferred.",
+  "approvedManifestSha256": "4842f2d90ad5e7d53e5bbc9da0596b063db96b011fb9c31eb9ce3ebbe161a104",
+  "approvedComparisonSha256": "2343d45eb5f241bc2144108cd62d0d27f911625e1ecab3765afc6499d79117c2",
+  "snapshotApprovalSha256": "4b72d310e5a6a756fdbe7a4578e4c85a0edffcde219607fa821c27d51659e5e0",
+  "selectedNewFrames": {
+    "sit-lay-a": "fbc017b8564049aab269344c340a4942cb7902617f0239300a98525db8f4d91c",
+    "sit-lay-b": "1b07cf3fda38912ee3ac5271e23f6ce99f18229194fb081b2d242c8ea2f12f64",
+    "lay-sleep-a": "8e5c22156cd431266b9871917aafca06dba8bd52ad9d0b44891225bfce8d7249",
+    "lay-sleep-b": "a735dc41d858302f7a5518d444f8f7f48e81006bb654cf28dba8ba5c4605c2e4",
+    "sit-lay-c": "1790bc54811f36ca7f4ed3c8151f15a62ddad9d11bdacdad30827dbcc9bd8d9c"
+  },
+  "retainedOriginalFrames": 21,
+  "activeIntermediateFramesPerRoute": 5,
+  "retiredFromActiveRoutes": "sit-lay-1 (preserved unchanged)",
+  "runtimeManifestSha256": "ac94d9d3cb8a78dddab61fa5ecdace43d7e9decd8479f5cdb21ec7f13c6c7c60"
+}

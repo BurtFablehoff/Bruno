@@ -12,8 +12,8 @@ using PetFramework;
 #else
 [assembly:AssemblyProduct("Bruno Companion")]
 #endif
-[assembly:AssemblyVersion("0.1.2.0")]
-[assembly:AssemblyFileVersion("0.1.2.0")]
+[assembly:AssemblyVersion("0.1.3.0")]
+[assembly:AssemblyFileVersion("0.1.3.0")]
 
 namespace Bruno
 {

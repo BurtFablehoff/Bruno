@@ -2,9 +2,9 @@
 
 For Windows 10 or 11.
 
-1. [Download the Bruno installer](https://github.com/BurtFablehoff/Bruno/releases/download/v0.1.2/Bruno-Setup-0.1.2.exe).
+1. [Download the Bruno installer](https://github.com/BurtFablehoff/Bruno/releases/download/v0.1.3/Bruno-Setup-0.1.3.exe).
 2. If your browser says the file isn't commonly downloaded, click **Keep**, then **Keep anyway** when it asks again.
-3. Open **Bruno-Setup-0.1.2.exe** from your Downloads folder.
+3. Open **Bruno-Setup-0.1.3.exe** from your Downloads folder.
 4. If Windows shows **Windows protected your PC**, click **More info**, then **Run anyway**.
 5. Follow the setup steps, click **Install**, then **Finish**. Bruno will appear on your desktop!
 

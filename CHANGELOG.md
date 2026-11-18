@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 - 2026-11-18
+
+- Smooth sitting, lying down and falling asleep with more frames between poses.
+- Replace the crouch that made the sit-to-lie movement appear out of order.
+- Keep the same overall speed, sizes and taskbar contact.
+
 ## 0.1.2 - 2026-11-14
 
 - Rest the seated torso/butt on the taskbar edge.

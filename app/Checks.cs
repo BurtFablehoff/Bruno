@@ -44,7 +44,7 @@ namespace Bruno
                     if(eye||mouth||head)Body(Pixels(art.Get(pose)),data,b.Width,head?(pose=="sit"?660:610):(eye?(pose=="sit"?352:315):470),eye||mouth);
                 }
             }
-            Require(frames==21,"Unexpected runtime frame count");
+            Require(frames==26,"Unexpected runtime frame count");
             foreach(string pose in new[]{"sit","lay","sleep"}) {
                 FrameInfo f=art.Manifest.frames[pose];double row=pose=="sit"?1265:pose=="lay"?905:900;
                 Require(f.supportY==row&&f.Bounds.Bottom>row,"Body contact/paw overhang lost: "+pose);
