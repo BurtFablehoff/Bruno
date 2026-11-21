@@ -123,7 +123,7 @@ namespace Bruno
             automatic.Enabled=Program.Updater!=null;
             ToolStripMenuItem checkUpdates=Add(menu.Items,"Check for updates",delegate{requestedUpdateChecks++;if(updates!=null){updates.Check(true);tray.ShowBalloonTip(2000,"Bruno updates","Checking for a newer version...",ToolTipIcon.Info);}});
             checkUpdates.Enabled=Program.Updater!=null;
-            automatic.ToolTipText=checkUpdates.ToolTipText="Bruno's update destination has not been configured.";
+            automatic.ToolTipText=checkUpdates.ToolTipText="Updates come from Bruno's GitHub releases.";
             menu.Items.Add(new ToolStripSeparator());Section("Screen");
             Add(menu.Items,"Bring to this screen",BringHere);Add(menu.Items,"Send to other screen",SendToOtherScreen);
             menu.Items.Add(new ToolStripSeparator());Add(menu.Items,"Close",Close);
@@ -160,7 +160,7 @@ namespace Bruno
             foreach(string text in new[]{"Sit","Lay Down"})
             {find(text).PerformClick();if(!routine.Automatic)throw new Exception("Pose selection disabled autonomous sleep.");for(int i=0;i<30&&routine.InTransition;i++)routine.Step(.1,false);if(routine.Pose!=(text=="Sit"?"sit":"lay"))throw new Exception("Production pose failed.");count++;}
             find("Start with Windows").PerformClick();if(!preferences.StartWithWindows)throw new Exception("Startup toggle failed.");find("Start with Windows").PerformClick();if(preferences.StartWithWindows)throw new Exception("Startup toggle restore failed.");count+=2;
-            if(find("Automatic updates").Enabled||find("Check for updates").Enabled||preferences.AutoUpdates||updates!=null||Program.Updater!=null)throw new Exception("Unconfigured updates are enabled.");count+=2;
+            if(!find("Automatic updates").Enabled||!find("Check for updates").Enabled||updates!=null||Program.Updater==null)throw new Exception("Production updater menu wiring differs.");bool prior=preferences.AutoUpdates;find("Automatic updates").PerformClick();if(preferences.AutoUpdates==prior)throw new Exception("Automatic updates toggle failed.");find("Automatic updates").PerformClick();if(preferences.AutoUpdates!=prior)throw new Exception("Automatic updates toggle restore failed.");count+=2;
             ToolStripMenuItem size=find("Size");string[] sizeNames={"Small","Normal","Large","Extra Large"};double[] sizeValues={.16,.24,.30,.36};
             if(size.DropDownItems.Count!=4)throw new Exception("Four production sizes required.");
             for(int i=0;i<sizeNames.Length;i++){var item=(ToolStripMenuItem)size.DropDownItems[i];if(item.Text!=sizeNames[i])throw new Exception("Size label differs.");item.PerformClick();if(preferences.Size!=sizeValues[i])throw new Exception("Size menu wiring failed.");}count+=4;

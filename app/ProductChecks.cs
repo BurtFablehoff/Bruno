@@ -11,7 +11,8 @@ namespace Bruno
     {
         static void Require(bool value,string message){if(!value)throw new Exception(message);}
         public static void Run(Assets art,string path) {
-            Require(String.IsNullOrEmpty(Product.Repository)&&Program.Updater==null,"Unconfigured update feed became active");
+            Require(Product.Repository=="BurtFablehoff/Bruno"&&(Program.Updater!=null)==!Program.Development,"Updater identity/development isolation differs");
+            object updaterChecks=Program.Development?null:Program.Updater.Test(Path.Combine(Path.GetDirectoryName(path),"updater-fixtures"));
             Require(!new Preferences().AutoUpdates&&!new Preferences().StartWithWindows,"Unexpected automatic update/startup defaults");
             var run=new Dictionary<string,string>();run["OtherPet"]="preserve";string exe=Assembly.GetExecutingAssembly().Location;
             Action<string,string> set=delegate(string key,string value){run[key]=value;};Action<string> remove=delegate(string key){run.Remove(key);};
@@ -26,7 +27,7 @@ namespace Bruno
                 r.SelectAwake("sit");for(int i=0;i<40&&r.InTransition;i++)r.Step(.1,false);Require(r.Pose=="sit"&&r.Automatic,"Manual wake failed");
                 bool rejected=false;try{r.SelectAwake("sleep");}catch(ArgumentException){rejected=true;}Require(rejected,"Production exposes manual sleep");
             }
-            File.WriteAllText(path,new JavaScriptSerializer().Serialize(new{passed=true,development=Program.Development,product=FileVersionInfo.GetVersionInfo(exe).ProductName,updatesConfigured=false,updaterCreated=false,startupQuoted=true,startupOptIn=true,startupRegistryName=Product.StartupName,settingsIsolated=true,autonomousSleepCases=8,manualSleepRejected=true,networkUsed=false,registryWritten=false,userSettingsWritten=false,uiOpened=false}));
+            File.WriteAllText(path,new JavaScriptSerializer().Serialize(new{passed=true,development=Program.Development,product=FileVersionInfo.GetVersionInfo(exe).ProductName,updatesConfigured=!Program.Development,updaterCreated=Program.Updater!=null,updaterChecks=updaterChecks,startupQuoted=true,startupOptIn=true,startupRegistryName=Product.StartupName,settingsIsolated=true,autonomousSleepCases=8,manualSleepRejected=true,networkUsed=false,registryWritten=false,userSettingsWritten=false,uiOpened=false}));
         }
     }
 }

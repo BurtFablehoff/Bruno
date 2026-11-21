@@ -12,8 +12,8 @@ using PetFramework;
 #else
 [assembly:AssemblyProduct("Bruno Companion")]
 #endif
-[assembly:AssemblyVersion("0.1.3.0")]
-[assembly:AssemblyFileVersion("0.1.3.0")]
+[assembly:AssemblyVersion("0.1.4.0")]
+[assembly:AssemblyFileVersion("0.1.4.0")]
 
 namespace Bruno
 {
@@ -37,6 +37,7 @@ namespace Bruno
             {
                 if(args.Length==2&&args[0]=="--apply-update"){if(Development||Updater==null)throw new InvalidOperationException("Updates are not configured for this build.");return Updater.Apply(args[1]);}
                 if(args.Length==3&&args[0]=="--update-health"){if(Development||Updater==null)throw new InvalidOperationException("Updates are not configured for this build.");Updater.HealthFile=args[1];Updater.HealthToken=args[2];args=new string[0];}
+                if(args.Length==2&&args[0]=="--check-updates"){if(Updater==null)throw new InvalidOperationException("Updates are not configured for this build.");ReleaseUpdate found=Updater.Check();File.WriteAllText(args[1],new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(new{passed=true,currentVersion=Updater.CurrentVersion,updateAvailable=found!=null,availableVersion=found==null?null:found.Version}));return 0;}
                 using(Assets art=new Assets())
                 {
                     if(args.Length==2&&args[0]=="--render-contact"){Checks.RenderContact(art,args[1]);return 0;}

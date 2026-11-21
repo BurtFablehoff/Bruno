@@ -13,8 +13,8 @@ if (!$ProductionExecutable) {
 }
 $ProductionExecutable=(Resolve-Path -LiteralPath $ProductionExecutable).Path
 $info=[Diagnostics.FileVersionInfo]::GetVersionInfo($ProductionExecutable)
-if ($info.ProductName -ne 'Bruno Companion' -or $info.FileVersion -ne '0.1.3.0') { throw 'Installer requires the 0.1.3 production EXE, never a developer or another pet build.' }
+if ($info.ProductName -ne 'Bruno Companion' -or $info.FileVersion -ne '0.1.4.0') { throw 'Installer requires the 0.1.4 production EXE, never a developer or another pet build.' }
 & $CompilerPath ('/DProductionExecutable='+$ProductionExecutable) (Join-Path $root 'installer/Bruno.iss')
 if ($LASTEXITCODE -ne 0) { throw 'Installer compilation failed.' }
-Write-Host ('Built installer: '+(Join-Path $root 'build/release/Bruno-Setup-0.1.3.exe'))
+Write-Host ('Built installer: '+(Join-Path $root 'build/release/Bruno-Setup-0.1.4.exe'))
 Write-Host 'The installer was not run.'

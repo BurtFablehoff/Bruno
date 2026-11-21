@@ -1,3 +1,13 @@
+# Bruno 0.1.4 update publication
+
+Owner requested publication on 2026-11-20 so Anati can receive the update.
+Production now uses BurtFablehoff/Bruno releases and Bruno.exe; developer builds
+keep the updater disabled. Existing 0.1.3 and earlier installations require one
+manual installer update because their update feed was disabled. Automatic updates
+remain opt-in. Artwork, registration and animation timings are unchanged.
+Headless product checks cover feed identity, menu toggle, version/digest/URL
+validation, atomic replacement and rollback.
+
 # Bruno repository workflow
 
 Bruno is an independent Windows desktop companion for the owner's fawn pug.
