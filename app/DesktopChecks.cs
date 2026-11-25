@@ -50,7 +50,7 @@ namespace Bruno
         {
             int menuChecks;
             using(CompanionWindow menu=new CompanionWindow(art,true))menuChecks=menu.CheckMenuWiring();
-            int inputChecks=MenuAndGestureChecks(),bodyHits=0,overhangHits=0;uint gdiBefore,gdiAfter;bool foregroundUnchanged;
+            int inputChecks=MenuAndGestureChecks(),bodyHits=0,overhangHits=0,clockUploads=0;uint gdiBefore,gdiAfter;bool foregroundUnchanged;
             IntPtr foreground=GetForegroundWindow();
             using(Probe probe=new Probe())
             {
@@ -92,9 +92,22 @@ namespace Bruno
                         if((key=="sit"&&pixel==new Point(370,1330))||(key=="lay"&&pixel==new Point(400,970))) {Require(yy>support.Y,"Front paw no longer hangs below the floor");overhangHits++;}
                     }
                 }
+                foreach(var entry in art.Manifest.frames)if(entry.Key.StartsWith("clock-"))
+                {
+                    Point origin;PointF support=new PointF(-1200,700);
+                    Bitmap whole=placement.Paint(entry.Key,support,.24,out origin);Size size=whole.Size;
+                    Point paw=Point.Empty;bool found=false;
+                    for(int yy=whole.Height-1;yy>=0&&!found;yy--)for(int xx=0;xx<whole.Width;xx++)
+                        if(origin.Y+yy>support.Y&&whole.GetPixel(xx,yy).A>32){paw=new Point(origin.X+xx,origin.Y+yy);found=true;break;}
+                    Require(found,"Clock sprite lost overhanging paws: "+entry.Key);
+                    probe.UploadScene(whole,origin);Require(probe.ClientSize==size,"Clock upload clipped whole body");
+                    Require(SendMessage(handle,0x84,IntPtr.Zero,XY(paw.X,paw.Y)).ToInt32()==1,"Clock paw not clickable: "+entry.Key);
+                    clockUploads++;
+                }
             }
+            Require(clockUploads==24,"Clock native coverage missing");
             Require(overhangHits==2,"Dangling paw input coverage missing");
-            var report=new{passed=true,menuChecks=menuChecks,menuAndGestureCases=inputChecks,fullBodyHitRegions=bodyHits,pawHitTargetsBelowFloor=overhangHits,managedClientMatchesWholeSprite=true,hiddenNativeUploads=206,movedHitTestPositions=3,negativeScreenCoordinates=true,windowStyles=true,transparentHitTest=true,opaqueHitTest=true,mouseActivationSuppressed=true,
+            var report=new{passed=true,menuChecks=menuChecks,menuAndGestureCases=inputChecks,fullBodyHitRegions=bodyHits,pawHitTargetsBelowFloor=overhangHits,managedClientMatchesWholeSprite=true,hiddenNativeUploads=206+clockUploads,clockWholeSpriteUploads=clockUploads,movedHitTestPositions=3,negativeScreenCoordinates=true,windowStyles=true,transparentHitTest=true,opaqueHitTest=true,mouseActivationSuppressed=true,
                 gdiObjectsBefore=gdiBefore,gdiObjectsAfter=gdiAfter,foregroundUnchanged=foregroundUnchanged,visibleWindowsOpened=false,trayIconShown=false,userSettingsWritten=false,
                 manualStillRequired="Owner feel/appearance of visible companion, actual drag/drop input and mixed-DPI monitor changes"};
             File.WriteAllText(path,new JavaScriptSerializer().Serialize(report));

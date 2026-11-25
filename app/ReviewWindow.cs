@@ -7,7 +7,7 @@ namespace Bruno
 {
     internal sealed class ReviewWindow:Form
     {
-        readonly Assets art;readonly Placement placement;readonly Routine routine;readonly Timer timer=new Timer();
+        readonly Assets art;readonly Placement placement;readonly Routine routine;readonly Timer timer=new Timer();readonly MouseLook look=new MouseLook();
         readonly FlowLayoutPanel controls=new FlowLayoutPanel();readonly Panel scene=new SmoothPanel();double nextPoseChange;
         sealed class SmoothPanel:Panel{public SmoothPanel(){DoubleBuffered=true;ResizeRedraw=true;}}
         public ReviewWindow(Assets assets)
@@ -27,18 +27,21 @@ namespace Bruno
             CheckBox sleepLoop=new CheckBox{Text="Loop lie / sleep",AutoSize=true};sleepLoop.CheckedChanged+=delegate
             {if(sleepLoop.Checked){loop.Checked=false;routine.SetPose("lay",true);nextPoseChange=routine.Clock+1;}};controls.Controls.Add(sleepLoop);
             loop.CheckedChanged+=delegate{if(loop.Checked)sleepLoop.Checked=false;};
+            CheckBox follow=new CheckBox{Text="Look at mouse",Checked=true,AutoSize=true};controls.Controls.Add(follow);
             CheckBox light=new CheckBox{Text="Light background",AutoSize=true};controls.Controls.Add(light);
             scene.Paint+=delegate(object s,PaintEventArgs e)
             {
                 e.Graphics.Clear(light.Checked?Color.Beige:Color.FromArgb(25,30,38));e.Graphics.InterpolationMode=InterpolationMode.HighQualityBicubic;
                 float floor=scene.Height-45;PointF support=new PointF(scene.Width*.38f,floor);
-                RectangleF target=placement.Sprite(routine.Frame,support,.36);e.Graphics.DrawImage(art.Get(routine.Frame),target);
+                string frame=look.DisplayFrame(routine,follow.Checked);RectangleF target=placement.Sprite(frame,support,.36);e.Graphics.DrawImage(art.Get(frame),target);
                 using(Pen pen=new Pen(Color.SteelBlue))e.Graphics.DrawLine(pen,10,floor,scene.Width-10,floor);
                 using(Brush text=new SolidBrush(light.Checked?Color.Black:Color.White))e.Graphics.DrawString(routine.Pose+(routine.Action.Length>0?" / "+routine.Action:""),Font,text,15,15);
             };
             timer.Interval=16;timer.Tick+=delegate
             {
                 routine.Step(.016,false);
+                PointF head=MouseLook.Head(art,placement,routine.Pose,new PointF(scene.Width*.38f,scene.Height-45),.36);
+                look.Update(.016,routine,follow.Checked,false,head,scene.PointToClient(Cursor.Position),MouseLook.DeadZone(.36));
                 if(loop.Checked&&!routine.Paused&&routine.Action.Length==0&&routine.Clock>=nextPoseChange)
                 {routine.SetPose(routine.Pose=="sit"?"lay":"sit",true);nextPoseChange=routine.Clock+1.36;}
                 if(sleepLoop.Checked&&!routine.Paused&&routine.Action.Length==0&&routine.Clock>=nextPoseChange)

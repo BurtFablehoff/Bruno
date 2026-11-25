@@ -44,7 +44,7 @@ namespace Bruno
                     if(eye||mouth||head)Body(Pixels(art.Get(pose)),data,b.Width,head?(pose=="sit"?660:610):(eye?(pose=="sit"?352:315):470),eye||mouth);
                 }
             }
-            Require(frames==26,"Unexpected runtime frame count");
+            Require(frames==50,"Unexpected runtime frame count");
             foreach(string pose in new[]{"sit","lay","sleep"}) {
                 FrameInfo f=art.Manifest.frames[pose];double row=pose=="sit"?1265:pose=="lay"?905:900;
                 Require(f.supportY==row&&f.Bounds.Bottom>row,"Body contact/paw overhang lost: "+pose);
@@ -104,8 +104,9 @@ namespace Bruno
             }
             Require(rest/total>.90&&stateChanges>30&&automaticActions>100,"Quiet routine coverage insufficient");
             using(var hit=new Bitmap(3,3)){hit.SetPixel(1,1,Color.White);Require(LayeredSpriteWindow.IsOpaque(hit,new Point(1,1))&&!LayeredSpriteWindow.IsOpaque(hit,new Point(0,0)),"Alpha hit test");}
+            object mouseLook=MouseLookChecks.Run(art);
             Order();Require(Program.Singleton=="Local\\"+Program.SettingsName&&Program.SettingsName.StartsWith("BrunoCompanion"),"Identity isolation failed");
-            File.WriteAllText(path,new JavaScriptSerializer().Serialize(new{passed=true,embeddedFrames=frames,geometryPlacements=placements,postureRoutes=routes,awakeActionCases=actions,simulatedHours=96,restFraction=rest/total,stateChanges=stateChanges,automaticActions=automaticActions,autonomousSleeps=autonomousSleeps,approvedActionAndPostureTimings=true,approvedBodiesAndAlpha=true,sleepBlocksExpressions=true,pauseMenuDragGates=true,taskbarOrderCases=8,cacheLimit=Assets.CacheLimit,uiOpened=false,registryWritten=false,networkUsed=false,manualReviewRequired="Visible companion, clicks, drag, monitor changes and mixed-DPI feel"}));
+            File.WriteAllText(path,new JavaScriptSerializer().Serialize(new{passed=true,mouseLook=mouseLook,embeddedFrames=frames,geometryPlacements=placements,postureRoutes=routes,awakeActionCases=actions,simulatedHours=96,restFraction=rest/total,stateChanges=stateChanges,automaticActions=automaticActions,autonomousSleeps=autonomousSleeps,approvedActionAndPostureTimings=true,approvedBodiesAndAlpha=true,sleepBlocksExpressions=true,pauseMenuDragGates=true,taskbarOrderCases=8,cacheLimit=Assets.CacheLimit,uiOpened=false,registryWritten=false,networkUsed=false,manualReviewRequired="Visible companion, clicks, drag, monitor changes and mixed-DPI feel"}));
         }
         public static void RenderPoseCycle(Assets art,string directory) {
             Directory.CreateDirectory(directory);var placement=new Placement(art);var keys=new List<string>();var delays=new List<int>();

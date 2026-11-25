@@ -490,6 +490,438 @@
       "floorContact": "seated butt",
       "draft": false,
       "precomposited": false
+    },
+    "clock-sit-h12": {
+      "file": "frames/clock-sit-h12.png",
+      "sha256": "93dbbe8de84152680af12700b4ae0694c39039fc9498dd21ebbc246253a5879f",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        112,
+        38,
+        994,
+        1383
+      ],
+      "scale": 0.9981717068004377,
+      "supportX": 554.8424579273711,
+      "supportY": 1266.0945050740654,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h01": {
+      "file": "frames/clock-sit-h01.png",
+      "sha256": "c7cb50f13d83f1c5e8b2201a74422264d810eae452824a6e8c4d8777e6b929b9",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        112,
+        23,
+        993,
+        1384
+      ],
+      "scale": 0.9986639049980686,
+      "supportX": 554.0423343881565,
+      "supportY": 1265.9959863523798,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h02": {
+      "file": "frames/clock-sit-h02.png",
+      "sha256": "f98dc707b9c4b14ad8e63d870c949ddd54a6c0fddc047b2d04952b6efbc9fa68",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        113,
+        28,
+        996,
+        1382
+      ],
+      "scale": 0.9957349913021829,
+      "supportX": 555.453166121639,
+      "supportY": 1264.9871501692667,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h03": {
+      "file": "frames/clock-sit-h03.png",
+      "sha256": "e8792c666b9e87e55934b4ac385e6dc58a533497516a37b5d8085304e9b4c78f",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        112,
+        31,
+        997,
+        1383
+      ],
+      "scale": 0.9953793630524783,
+      "supportX": 555.7347407364724,
+      "supportY": 1265.9860737409704,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h04": {
+      "file": "frames/clock-sit-h04.png",
+      "sha256": "f6a087342f0cf80a3439d6b620a52710ecdc36489e1d6d8ca55aec0bfd00f1dd",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        113,
+        61,
+        991,
+        1384
+      ],
+      "scale": 1.001754595085357,
+      "supportX": 552.8367094942828,
+      "supportY": 1267.005254565621,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h05": {
+      "file": "frames/clock-sit-h05.png",
+      "sha256": "ffbb03560488a9fc29de106b6f5a1dab2d78218eb933f0ad5b6e89fa58d328d8",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        66,
+        994,
+        1383
+      ],
+      "scale": 0.9975475496247623,
+      "supportX": 553.6777326030309,
+      "supportY": 1265.992624560976,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h06": {
+      "file": "frames/clock-sit-h06.png",
+      "sha256": "8c016c3829e4ac61e35115efb198ed33ea9cc151f7d7aef935173a3df9c19e8a",
+      "width": 1072,
+      "height": 1467,
+      "bounds": [
+        64,
+        54,
+        1011,
+        1461
+      ],
+      "scale": 0.9319097167836417,
+      "supportX": 539.4387747483727,
+      "supportY": 1339.780804035015,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h07": {
+      "file": "frames/clock-sit-h07.png",
+      "sha256": "deed7a276f73be4e0c64ca2aecb530203b770abe6becc53ff20417ad217ff782",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        113,
+        60,
+        991,
+        1384
+      ],
+      "scale": 0.999539292679057,
+      "supportX": 553.469155649529,
+      "supportY": 1265.9986172409901,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h08": {
+      "file": "frames/clock-sit-h08.png",
+      "sha256": "b288cbb39a549ee50bcbd339e89eb43f43b0f2f362dd644d7739946beee0eeea",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        46,
+        996,
+        1382
+      ],
+      "scale": 0.9944979820867287,
+      "supportX": 555.5193272102333,
+      "supportY": 1265.9834026272179,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h09": {
+      "file": "frames/clock-sit-h09.png",
+      "sha256": "29931f34f66de6424ce4d8bb997cfac4dd9e59151fe4d5bb8915243b1b85b34b",
+      "width": 1072,
+      "height": 1467,
+      "bounds": [
+        58,
+        52,
+        1000,
+        1457
+      ],
+      "scale": 0.945194826195278,
+      "supportX": 527.3593950444451,
+      "supportY": 1334.8260511834624,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h10": {
+      "file": "frames/clock-sit-h10.png",
+      "sha256": "53fc2557ff5bd21f3f120cf396ca88dae562a7181bc6d20c5ce88e1bc460a93c",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        111,
+        35,
+        991,
+        1384
+      ],
+      "scale": 1.0035689382296562,
+      "supportX": 552.8530207538788,
+      "supportY": 1267.0106687386199,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-sit-h11": {
+      "file": "frames/clock-sit-h11.png",
+      "sha256": "ce232787bc98d09ca3af4d70f3614cb0aacb159b82cb193b3204364f7e44869d",
+      "width": 1122,
+      "height": 1402,
+      "bounds": [
+        112,
+        26,
+        997,
+        1383
+      ],
+      "scale": 0.9953944037726632,
+      "supportX": 555.5856752465166,
+      "supportY": 1266.986119282337,
+      "floorContact": "seated butt",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h12": {
+      "file": "frames/clock-lay-h12.png",
+      "sha256": "ec80d54fe99b274f5d18515829b0c79d2bcd734c2ecedff2be3b08ce5634ebae",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        236,
+        16,
+        1395,
+        1008
+      ],
+      "scale": 1.0759583050541597,
+      "supportX": 610.1924008393478,
+      "supportY": 903.934688096612,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h01": {
+      "file": "frames/clock-lay-h01.png",
+      "sha256": "255025e61ae165c19ea2bed6032fed5cba32a1f3d90a4edf50449b125fbde9a9",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        237,
+        11,
+        1396,
+        1008
+      ],
+      "scale": 1.076945645704198,
+      "supportX": 609.8739170517906,
+      "supportY": 906.5668358730451,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h02": {
+      "file": "frames/clock-lay-h02.png",
+      "sha256": "c004c7879ade0a0bf46f151fb42d6fb7c3b4037af31befb451400d482ae951cc",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        238,
+        7,
+        1395,
+        1008
+      ],
+      "scale": 1.0776500490487388,
+      "supportX": 609.6743839208382,
+      "supportY": 905.5897352159278,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h03": {
+      "file": "frames/clock-lay-h03.png",
+      "sha256": "90ee8c52f392e214c098a655433bc8ed82e95b483b98225ab0bd4a2b198215dc",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        235,
+        11,
+        1397,
+        1009
+      ],
+      "scale": 1.078688488121311,
+      "supportX": 610.2269874505522,
+      "supportY": 907.6234391325759,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h04": {
+      "file": "frames/clock-lay-h04.png",
+      "sha256": "adb7f4f0f40404a75fc2e78894a3c9783a3299fefb4f732438a0156afc012e77",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        238,
+        22,
+        1399,
+        1008
+      ],
+      "scale": 1.074945692131034,
+      "supportX": 610.8038524598323,
+      "supportY": 905.9016561134647,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h05": {
+      "file": "frames/clock-lay-h05.png",
+      "sha256": "322039851e5221e33822b17513486eb058f8a41e1038b242307bcf79afea9f3c",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        235,
+        11,
+        1401,
+        1008
+      ],
+      "scale": 1.0747577074575223,
+      "supportX": 610.0235633478849,
+      "supportY": 906.8955171012292,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h06": {
+      "file": "frames/clock-lay-h06.png",
+      "sha256": "51652954fed0e6b43771c4d10e5474684d6cdd067898b90ef6da9af8e5276523",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        235,
+        20,
+        1397,
+        1008
+      ],
+      "scale": 1.077688227443241,
+      "supportX": 609.9646572518772,
+      "supportY": 904.9909754964342,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h07": {
+      "file": "frames/clock-lay-h07.png",
+      "sha256": "604729da43335be32a1d777e4247e5ebb7ac008b5c92883e3939eb2d38a6196b",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        237,
+        32,
+        1393,
+        1008
+      ],
+      "scale": 1.0785071886776119,
+      "supportX": 609.9766168898439,
+      "supportY": 907.6175594953381,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h08": {
+      "file": "frames/clock-lay-h08.png",
+      "sha256": "ffe599ee774723dde79b7e1693aefd7fa625e5240a6f21aa66b6fe83129b0063",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        240,
+        17,
+        1398,
+        1007
+      ],
+      "scale": 1.0780336645559834,
+      "supportX": 610.2277611407326,
+      "supportY": 904.0021935286182,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h09": {
+      "file": "frames/clock-lay-h09.png",
+      "sha256": "64c65dc2322d681371961c7ca4194465733477a7d824f191e9da17c935210910",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        230,
+        24,
+        1394,
+        1008
+      ],
+      "scale": 1.076382744572263,
+      "supportX": 610.3036200010057,
+      "supportY": 905.5485150593365,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h10": {
+      "file": "frames/clock-lay-h10.png",
+      "sha256": "00c2fad99e291c70ce7c0e1a3a4cacf71bc35d0731d87e8eea3846742cc1e25d",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        237,
+        5,
+        1395,
+        1008
+      ],
+      "scale": 1.0780247335445696,
+      "supportX": 609.9986835749971,
+      "supportY": 906.0019035855406,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
+    },
+    "clock-lay-h11": {
+      "file": "frames/clock-lay-h11.png",
+      "sha256": "eb340b99202cabfb6c4840ebad35e037453dfdec40dc275ab7dfe7e8ee914a84",
+      "width": 1536,
+      "height": 1024,
+      "bounds": [
+        240,
+        10,
+        1393,
+        1008
+      ],
+      "scale": 1.076604154088618,
+      "supportX": 609.9911570241497,
+      "supportY": 905.6557235883942,
+      "floorContact": "chest/elbows",
+      "draft": false,
+      "precomposited": false
     }
   },
   "clips": {

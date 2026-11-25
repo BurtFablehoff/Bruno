@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.5 - 2026-11-24
+
+- Bruno follows the mouse while sitting or lying awake.
+- Add a **Look at mouse** menu switch, on by default.
+- Use the 24 approved complete sprites with their natural neck and body connections.
+- Keep sleep, expressions, posture changes and taskbar contact working as before.
+
 ## 0.1.3 - 2026-11-18
 
 - Smooth sitting, lying down and falling asleep with more frames between poses.

@@ -13,6 +13,7 @@ namespace Bruno
     internal sealed class Preferences
     {
         [ScriptIgnore]public bool Ephemeral;
+        public bool LookAtMouse=true;
         public double Size=.16;public bool Expressions=true,AutoUpdates=false,StartWithWindows;public string Monitor="";public double Fraction=.65;
         internal static string Folder{get{return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),Program.SettingsName);}}
         internal static Preferences Load()
@@ -35,8 +36,9 @@ namespace Bruno
     }
     internal sealed class CompanionWindow:LayeredSpriteWindow
     {
-        internal static string Title{get{return Program.Development?"Bruno - Development 0.1.2":"Bruno";}}
+        internal static string Title{get{return Program.Development?"Bruno - Development 0.1.5":"Bruno";}}
         readonly Assets art;readonly Placement placement;readonly Routine routine;readonly Preferences preferences;
+        readonly MouseLook look=new MouseLook();
         readonly Timer timer=new Timer();readonly Stopwatch clock=Stopwatch.StartNew();
         readonly UpdateCoordinator updates;
         readonly ContextMenuStrip menu=new ContextMenuStrip();readonly NotifyIcon tray=new NotifyIcon();
@@ -62,7 +64,7 @@ namespace Bruno
                 using(Graphics g=Graphics.FromImage(icon)){g.DrawImage(art.Get("sit"),new Rectangle(0,0,32,32),new Rectangle(175,30,750,580),GraphicsUnit.Pixel);}
                 IntPtr handle=icon.GetHicon();try{using(Icon original=Icon.FromHandle(handle))trayIcon=(Icon)original.Clone();}finally{DestroyIcon(handle);}
             }
-            tray.Icon=trayIcon;tray.Text="Bruno 0.1.2"+(Program.Development?" (development)":"");tray.ContextMenuStrip=menu;tray.Visible=!headless;
+            tray.Icon=trayIcon;tray.Text="Bruno 0.1.5"+(Program.Development?" (development)":"");tray.ContextMenuStrip=menu;tray.Visible=!headless;
             tray.DoubleClick+=delegate{BringHere();Show();drawn="";PaintFrame();};
             MouseDown+=PointerDown;MouseMove+=PointerMove;MouseUp+=PointerUp;MouseCaptureChanged+=delegate{if(!Capture)gesture.Cancel();};
             MouseEnter+=delegate{hoverSince=routine.Clock;};MouseLeave+=delegate{hoverSince=-1;};
@@ -72,6 +74,40 @@ namespace Bruno
         }
         ToolStripMenuItem Add(ToolStripItemCollection parent,string text,Action click)
         {ToolStripMenuItem item=new ToolStripMenuItem(text);item.Click+=delegate{click();};parent.Add(item);return item;}
+        void AddMouseLook(ToolStripItemCollection parent)
+        {
+            ToolStripMenuItem item=Add(parent,"Look at mouse",delegate
+            {preferences.LookAtMouse=!preferences.LookAtMouse;look.Reset();preferences.Save();drawn="";PaintFrame();});
+            item.Checked=preferences.LookAtMouse;menu.Opening+=delegate{item.Checked=preferences.LookAtMouse;};
+        }
+        string CurrentFrame{get{return look.DisplayFrame(routine,preferences.LookAtMouse);}}
+        void UpdateLook(double dt,PointF target,bool suppressed)
+        {
+            double size=placement.Scale(area,preferences.Size);
+            PointF head=MouseLook.Head(art,placement,routine.Pose,new PointF((float)x,area.Bottom),size);
+            look.Update(dt,routine,preferences.LookAtMouse,suppressed,head,target,MouseLook.DeadZone(size));
+        }
+        int CheckMouseLookWiring()
+        {
+            if(!preferences.Ephemeral)throw new Exception("Mouse-look check requires ephemeral settings");
+            int count=0;preferences.LookAtMouse=true;routine.DraftAnimations=false;routine.SleepTransitions=false;
+            foreach(string pose in new[]{"sit","lay"})
+            {
+                routine.SetPose(pose,true);double size=placement.Scale(area,preferences.Size);
+                PointF head=MouseLook.Head(art,placement,pose,new PointF((float)x,area.Bottom),size);
+                for(int index=0;index<12;index++)
+                {
+                    double a=index*Math.PI/6;PointF target=new PointF(head.X+(float)(300*Math.Sin(a)),head.Y-(float)(300*Math.Cos(a)));
+                    for(int i=0;i<80;i++)UpdateLook(.016,target,false);
+                    string expected="clock-"+pose+"-h"+(index==0?12:index).ToString("00");
+                    if(CurrentFrame!=expected)throw new Exception("Companion mouse-follow wiring differs: "+expected);
+                    count++;
+                }
+            }
+            routine.SetPose("sleep",true);UpdateLook(.1,PointF.Empty,false);
+            if(CurrentFrame!="sleep")throw new Exception("Companion gaze changed sleep");
+            look.Reset();routine.SetPose("sit",true);return count+1;
+        }
         void BuildMenu()
         {
             if(!Program.Development){BuildProductionMenu();return;}
@@ -93,6 +129,7 @@ namespace Bruno
             {int n=i;ToolStripMenuItem item=Add(sizes.DropDownItems,names[i],delegate{preferences.Size=values[n];x=placement.Clamp(area,x,preferences.Size);drawn="";preferences.Save();PaintFrame();});menu.Opening+=delegate{item.Checked=preferences.Size==values[n];};}
             ToolStripMenuItem pause=Add(windows.DropDownItems,"Pause",delegate{routine.Paused=!routine.Paused;});menu.Opening+=delegate{pause.Checked=routine.Paused;};
             ToolStripMenuItem expressions=Add(windows.DropDownItems,"Expressions",delegate{routine.Expressions=!routine.Expressions;preferences.Expressions=routine.Expressions;preferences.Save();});menu.Opening+=delegate{expressions.Checked=routine.Expressions;};
+            AddMouseLook(windows.DropDownItems);
             ToolStripMenuItem draft=Add(windows.DropDownItems,"Sit / lie transitions",delegate{routine.DraftAnimations=!routine.DraftAnimations;routine.SetPose(routine.Pose,false);});menu.Opening+=delegate{draft.Checked=routine.DraftAnimations;};
             ToolStripMenuItem sleepMotion=Add(windows.DropDownItems,"Sleep transitions",delegate{routine.SleepTransitions=!routine.SleepTransitions;routine.SetPose(routine.Pose,false);});menu.Opening+=delegate{sleepMotion.Checked=routine.SleepTransitions;};
             ToolStripMenuItem screens=new ToolStripMenuItem("Screen");windows.DropDownItems.Add(screens);Add(screens.DropDownItems,"Bring to this screen",BringHere);
@@ -115,6 +152,7 @@ namespace Bruno
             ToolStripMenuItem sit=Add(menu.Items,"Sit",delegate{routine.SelectAwake("sit");}),lay=Add(menu.Items,"Lay Down",delegate{routine.SelectAwake("lay");});
             sit.Checked=routine.Pose=="sit";lay.Checked=routine.Pose=="lay";
             menu.Opening+=delegate{sit.Checked=routine.Pose=="sit";lay.Checked=routine.Pose=="lay";};
+            AddMouseLook(menu.Items);
             menu.Items.Add(new ToolStripSeparator());Section("Windows");
             ToolStripMenuItem startup=Add(menu.Items,"Start with Windows",delegate{ChangeStartup();});menu.Opening+=delegate{startup.Checked=preferences.StartWithWindows;};
             startup.Checked=preferences.StartWithWindows;
@@ -153,19 +191,20 @@ namespace Bruno
         }
         int CheckProductionMenu()
         {
-            string[] expected={"Size","-","Options","Sit","Lay Down","-","Windows","Start with Windows","Automatic updates","Check for updates","-","Screen","Bring to this screen","Send to other screen","-","Close"};
+            string[] expected={"Size","-","Options","Sit","Lay Down","Look at mouse","-","Windows","Start with Windows","Automatic updates","Check for updates","-","Screen","Bring to this screen","Send to other screen","-","Close"};
             if(menu.Items.Count!=expected.Length)throw new Exception("Production menu item count differs.");
             for(int i=0;i<expected.Length;i++)if(expected[i]=="-"?!(menu.Items[i] is ToolStripSeparator):menu.Items[i].Text!=expected[i])throw new Exception("Production menu differs at "+i);
             Func<string,ToolStripMenuItem> find=delegate(string text){foreach(ToolStripItem item in menu.Items)if(item.Text==text)return (ToolStripMenuItem)item;throw new Exception("Missing production item: "+text);};int count=1;
             foreach(string text in new[]{"Sit","Lay Down"})
             {find(text).PerformClick();if(!routine.Automatic)throw new Exception("Pose selection disabled autonomous sleep.");for(int i=0;i<30&&routine.InTransition;i++)routine.Step(.1,false);if(routine.Pose!=(text=="Sit"?"sit":"lay"))throw new Exception("Production pose failed.");count++;}
             find("Start with Windows").PerformClick();if(!preferences.StartWithWindows)throw new Exception("Startup toggle failed.");find("Start with Windows").PerformClick();if(preferences.StartWithWindows)throw new Exception("Startup toggle restore failed.");count+=2;
+            ToolStripMenuItem mouse=find("Look at mouse");mouse.PerformClick();if(preferences.LookAtMouse)throw new Exception("Mouse look off failed");mouse.PerformClick();if(!preferences.LookAtMouse)throw new Exception("Mouse look restore failed");count+=2;
             if(!find("Automatic updates").Enabled||!find("Check for updates").Enabled||updates!=null||Program.Updater==null)throw new Exception("Production updater menu wiring differs.");bool prior=preferences.AutoUpdates;find("Automatic updates").PerformClick();if(preferences.AutoUpdates==prior)throw new Exception("Automatic updates toggle failed.");find("Automatic updates").PerformClick();if(preferences.AutoUpdates!=prior)throw new Exception("Automatic updates toggle restore failed.");count+=2;
             ToolStripMenuItem size=find("Size");string[] sizeNames={"Small","Normal","Large","Extra Large"};double[] sizeValues={.16,.24,.30,.36};
             if(size.DropDownItems.Count!=4)throw new Exception("Four production sizes required.");
             for(int i=0;i<sizeNames.Length;i++){var item=(ToolStripMenuItem)size.DropDownItems[i];if(item.Text!=sizeNames[i])throw new Exception("Size label differs.");item.PerformClick();if(preferences.Size!=sizeValues[i])throw new Exception("Size menu wiring failed.");}count+=4;
             find("Bring to this screen").PerformClick();find("Send to other screen").PerformClick();count+=2;
-            if(Visible||tray.Visible||IsHandleCreated)throw new Exception("Production menu checks opened UI.");return count;
+            if(Visible||tray.Visible||IsHandleCreated)throw new Exception("Production menu checks opened UI.");return count+CheckMouseLookWiring();
         }
         void UpdateActions()
         {
@@ -221,13 +260,14 @@ namespace Bruno
             PollMenu();routine.Step(dt,gesture.Pressed||inMenu||!Visible);
             TickUpdates();
             if(hoverSince>=0&&routine.Clock-hoverSince>.75&&!gesture.Pressed&&!inMenu){routine.ObserveHover();hoverSince=-1;}
+            UpdateLook(dt,Cursor.Position,gesture.Pressed||inMenu||!Visible);
             if(Visible)PaintFrame();
             if(Visible&&now>=orderAt&&!inMenu&&!PresentedBounds.IsEmpty){orderAt=now+.25;TaskbarOrder.Check(Handle,process,PresentedBounds);}
         }
         void PaintFrame()
         {
             if(!IsHandleCreated)return;x=placement.Clamp(area,x,preferences.Size);double scale=placement.Scale(area,preferences.Size);
-            string key=routine.Frame;PointF support=new PointF((float)x,area.Bottom);Point location;
+            string key=CurrentFrame;PointF support=new PointF((float)x,area.Bottom);Point location;
             Rectangle scene=placement.Scene(key,support,scale);
             if(key==drawn&&scene.Location==drawnPoint&&scale==drawnScale)return;
             Bitmap image=placement.Paint(key,support,scale,out location);Present(image,location);
@@ -253,6 +293,7 @@ namespace Bruno
             for(int i=0;i<sizeNames.Length;i++){find(sizeItems,sizeNames[i]).PerformClick();if(preferences.Size!=sizeValues[i])throw new Exception("Size wiring failed.");count++;}
             ToolStripMenuItem pause=find(windows,"Pause");pause.PerformClick();UpdateActions();if(!routine.Paused||actionMenu.Enabled)throw new Exception("Pause failed.");pause.PerformClick();count+=2;
             ToolStripMenuItem expressions=find(windows,"Expressions");expressions.PerformClick();if(routine.Expressions)throw new Exception("Expressions off failed.");expressions.PerformClick();if(!routine.Expressions)throw new Exception("Expressions restore failed.");count+=2;
+            ToolStripMenuItem mouse=find(windows,"Look at mouse");mouse.PerformClick();if(preferences.LookAtMouse)throw new Exception("Mouse look off failed");mouse.PerformClick();if(!preferences.LookAtMouse)throw new Exception("Mouse look restore failed");count+=2;
             ToolStripMenuItem draft=find(windows,"Sit / lie transitions");draft.PerformClick();if(routine.DraftAnimations)throw new Exception("Sit/lie switch off failed.");draft.PerformClick();if(!routine.DraftAnimations)throw new Exception("Sit/lie switch restore failed.");count+=2;
             ToolStripMenuItem sleepMotion=find(windows,"Sleep transitions");sleepMotion.PerformClick();if(routine.SleepTransitions)throw new Exception("Sleep transitions off failed.");sleepMotion.PerformClick();if(!routine.SleepTransitions)throw new Exception("Sleep transitions restore failed.");count+=2;
             foreach(string state in new[]{"Sitting","Lying awake"})
@@ -269,7 +310,7 @@ namespace Bruno
             find(states,"Automatic").PerformClick();if(!routine.Automatic)throw new Exception("Automatic menu failed.");count++;
             find(find(windows,"Screen").DropDownItems,"Bring to this screen").PerformClick();if(area.Width<=0||area.Height<=0)throw new Exception("Screen menu failed.");count++;
             find(states,"Review poses and actions");find(menu.Items,"Quit Bruno");count+=2;
-            if(Visible||tray.Visible||IsHandleCreated)throw new Exception("Menu check opened a window.");return count;
+            if(Visible||tray.Visible||IsHandleCreated)throw new Exception("Menu check opened a window.");return count+CheckMouseLookWiring();
         }
         protected override void Dispose(bool disposing)
         {

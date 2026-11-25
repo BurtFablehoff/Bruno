@@ -12,8 +12,8 @@ using PetFramework;
 #else
 [assembly:AssemblyProduct("Bruno Companion")]
 #endif
-[assembly:AssemblyVersion("0.1.4.0")]
-[assembly:AssemblyFileVersion("0.1.4.0")]
+[assembly:AssemblyVersion("0.1.5.0")]
+[assembly:AssemblyFileVersion("0.1.5.0")]
 
 namespace Bruno
 {
@@ -40,6 +40,7 @@ namespace Bruno
                 if(args.Length==2&&args[0]=="--check-updates"){if(Updater==null)throw new InvalidOperationException("Updates are not configured for this build.");ReleaseUpdate found=Updater.Check();File.WriteAllText(args[1],new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(new{passed=true,currentVersion=Updater.CurrentVersion,updateAvailable=found!=null,availableVersion=found==null?null:found.Version}));return 0;}
                 using(Assets art=new Assets())
                 {
+                    if(args.Length==2&&args[0]=="--render-mouse-look"){MouseLookChecks.Render(art,args[1]);return 0;}
                     if(args.Length==2&&args[0]=="--render-contact"){Checks.RenderContact(art,args[1]);return 0;}
                     if(args.Length==2&&args[0]=="--render-menu"){using(CompanionWindow window=new CompanionWindow(art,true))window.RenderMenu(args[1]);return 0;}
                     if(args.Length==2&&args[0]=="--test-product"){ProductChecks.Run(art,args[1]);return 0;}

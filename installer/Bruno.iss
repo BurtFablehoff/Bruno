@@ -5,8 +5,8 @@
 [Setup]
 AppId={{5477976A-F8EC-4233-BA5D-0312BF2727F5}
 AppName=Bruno
-AppVersion=0.1.4
-AppVerName=Bruno 0.1.4
+AppVersion=0.1.5
+AppVerName=Bruno 0.1.5
 AppPublisher=Bruno Companion
 DefaultDirName={localappdata}\Programs\Bruno
 DefaultGroupName=Bruno
@@ -21,11 +21,11 @@ RestartApplications=no
 UninstallDisplayName=Bruno
 UninstallDisplayIcon={app}\Bruno.exe
 OutputDir=..\build\release
-OutputBaseFilename=Bruno-Setup-0.1.4
+OutputBaseFilename=Bruno-Setup-0.1.5
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
-VersionInfoVersion=0.1.4.0
+VersionInfoVersion=0.1.5.0
 
 [Tasks]
 Name: "desktopicon"; Description: "Create a &desktop shortcut"; GroupDescription: "Additional shortcuts:"; Flags: unchecked

@@ -1,5 +1,5 @@
 param([switch]$Dev,[string]$ExecutableName)
-if (!$ExecutableName) { $ExecutableName = if ($Dev) { 'Bruno-Dev-0.1.4.exe' } else { 'Bruno-0.1.4.exe' } }
+if (!$ExecutableName) { $ExecutableName = if ($Dev) { 'Bruno-Dev-0.1.5.exe' } else { 'Bruno-0.1.5.exe' } }
 $ErrorActionPreference = 'Stop'
 if ([IO.Path]::GetFileName($ExecutableName) -ne $ExecutableName -or -not $ExecutableName.EndsWith('.exe')) { throw 'ExecutableName must be an EXE filename.' }
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET/Framework64/v4.0.30319/csc.exe'
